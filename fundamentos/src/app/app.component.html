@@ -1,0 +1,112 @@
+
+<h1>FUNDAMENTOS DE ANGULAR</h1>
+
+
+<!-- Propiedades e interpolación -->
+<section>
+  <h2>Propiedades e interpolación en Angular</h2>
+  <p>Las propiedades: variables que nosotros estructuramos en el TS</p>
+  <p>La interpolación: el uso de esas variables en nuestro HTML, de forma automática</p>
+
+
+  <!-- La interpolación de variables se hace con {{}} -->
+  <P>Este es un bootcamp con las especialista {{especialista}}, el bootcamp tiene {{horasBootcamp}} horas</P>
+
+  <h3>Contenido bootcamp:</h3>
+    <ul>
+      <li>Primero {{contenidoBootcamp.tecnologia1}}</li>
+
+      <li>Después {{contenidoBootcamp.tecnologia2}}</li>
+
+      <li>Actualmente estamos viendo {{contenidoBootcamp.tecnologia4}}</li>
+    </ul>
+
+  <p>El contenido de los productos van a ser: {{objetoProducto.nombre}}, la cantidad del producto es {{objetoProducto.cantidad}} y el producto se encuentra vendido actualmente. </p>
+
+</section>
+
+
+<hr>
+
+
+<!-- Enlace de datos -->
+<section>
+
+  <h2>Enlace de datos</h2>
+  <h3>Manejo de eventos:</h3>
+  <p>Acciones que podemos ejecutar cuando hacemos algo en el vanegador</p>
+
+  <button type="button" (click)="saludo()">Click me</button>
+
+
+  
+  <!-- Ejemplo 2 -->
+  <div class="caja {{colorFondo}}" (click)="manejarClick()" (mouseover)="manejarMouseOver()" (mouseout)="manejarMouseOut()">
+    <p>Holaaaa {{colorFondo}}</p>
+  </div>
+
+
+  <h3>Enlace de atributos:</h3>
+  <p>Esto se una cuando necesitamos manipular atributos de nuestro HTML de forma condicional</p>
+
+  <button type="button" [disabled]="!isLogged">Comprar producto</button>
+
+</section>
+
+<!-- 
+  {{Interpolacion}} 
+  (Eventos) 
+  [Atributos condicionados]  -->
+
+
+<hr>
+
+<!-- Control de flujo -->
+
+<section>
+  <h2>Control de flujo</h2>
+  <p>Ciclos y condicionales</p>
+
+
+  <h3>CONDICIONALES -> if</h3>
+
+  @if(isDelete){
+    <button type="button">Borrar Producto</button>
+  }@else {
+    <button>Modificar Producto</button>
+    <ul>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+      <li>Producto</li>
+    </ul>
+  }
+  
+
+  <!-- @for (items of items; track $index) {} -->
+
+  <h3>Condicional con directiva de Angular</h3>
+  <!-- Directica ngif -->
+   <div *ngIf="isShowed; else noMostrar">
+    <p>Este párrafo se muestra porque isShowed es verdadero.</p>
+
+   </div>
+
+   <ng-template #noMostrar>
+    <p>Este párrafo se muestra porque isShowed es falso.</p>
+   </ng-template>
+
+
+   <h3>Ciclo for</h3>
+   <p>Los productos en Stock son:</p>
+
+   <ol>
+    <li *ngFor="let producto of productos">{{producto}}</li>
+   </ol>
+
+   
+</section>
