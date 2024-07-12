@@ -110,3 +110,75 @@
 
    
 </section>
+
+
+<hr>
+
+<!-- FORMULARIOS -->
+<!-- ES LA FORMA DE PEDIRLE INFORMACIÓN AL USUARIO -->
+
+<section>
+  <h3>FORMULARIOS EN ANGULAR</h3>
+  <p>Hay dos tipos de formularios: Formularios basados en una plantilla y Formularios creativos.</p>
+
+  <h4>FORMULARIOS DRIVEN-TEMPLATES</h4>
+  <!-- Importar el FormsModule -->
+
+  <div>
+    <form (ngSubmit)="manejarEnvio()">
+      <label>
+        Color Favorito:
+        <input type="text" name="colorFav" [(ngModel)]="colorFavorito">
+      </label>
+
+      <br>
+      <br>
+
+      <label>
+        Nombre:
+        <input type="text" name="nombre" [(ngModel)]="nombre">
+      </label>
+
+      <br>
+      <br>
+
+
+      <label>
+        <button type="submit">Enviar información</button>
+      </label>
+
+    </form>
+  </div>
+
+
+  <!-- FORMULARIOS REACTIVOS -->
+
+  <div>
+    <form [formGroup]="login" (ngSubmit)="manejarSubmit()">
+      <label>
+        Correo: 
+        <input type="email" name="email" formControlName = "correo">
+      </label>
+
+      <br>
+      <br>
+
+      <label>
+        Contraseña:
+        <input type="password" name="password" formControlName = "contrasenia">
+      </label>
+
+      <br>
+      <br>
+
+
+      <label>
+        <button type="submit">Enviar información 2</button>
+      </label>
+
+    </form>
+  </div>
+
+
+
+</section>
